@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type TransactionTypeStatusDto {
+  name: String!
+}
+
+type TransactionDto {
+  transactionExternalId: String!
+  transactionType: TransactionTypeStatusDto!
+  transactionStatus: TransactionTypeStatusDto!
+  value: Int!
+  createdAt: String!
+}
+
+type TransactionOutputDto {
+  idTransaction: String!
+}
+
+type Query {
+  transaction(id: String!): TransactionDto!
+}
+
+type Mutation {
+  createTransaction(transactionInput: CreateTransactionDto!): TransactionOutputDto!
+}
+
+input CreateTransactionDto {
+  transferTypeId: Int!
+  value: Int!
+}
